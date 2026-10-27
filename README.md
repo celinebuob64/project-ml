@@ -1,6 +1,6 @@
 # Prédire l'échec scolaire en mathématiques par Machine Learning
 
-cL'objectif est de construire un **système d'alerte précoce** qui repère les élèves risquant d'échouer en mathématiques (note finale < 10/20), afin que l'établissement puisse leur proposer un accompagnement à temps.
+L'objectif est de construire un **système d'alerte précoce** qui repère les élèves risquant d'échouer en mathématiques (note finale < 10/20), afin que l'établissement puisse leur proposer un accompagnement à temps.
 
 ## Données
 
