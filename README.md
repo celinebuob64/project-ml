@@ -1,19 +1,34 @@
 # Prédire l'échec scolaire en mathématiques par Machine Learning
 
-Projet de Machine Learning réalisé dans le cadre d'un cours à l'ISAE-SUPAERO.
-
-L'objectif est de construire un **système d'alerte précoce** qui repère les élèves risquant d'échouer en mathématiques (note finale < 10/20), afin que l'établissement puisse leur proposer un accompagnement à temps.
+cL'objectif est de construire un **système d'alerte précoce** qui repère les élèves risquant d'échouer en mathématiques (note finale < 10/20), afin que l'établissement puisse leur proposer un accompagnement à temps.
 
 ## Données
 
-Jeu de données *Student Performance* (P. Cortez et A. Silva, 2008, UCI Machine Learning Repository) : 395 élèves de deux lycées portugais en mathématiques, et 649 en portugais.
+Le projet utilise le jeu de données *Student Performance* (P. Cortez et A. Silva, 2008, UCI Machine Learning Repository). Les données ont été collectées pendant l'année scolaire 2005-2006 dans deux lycées publics de la région de l'Alentejo, au Portugal : Gabriel Pereira (GP) et Mousinho da Silveira (MS). Elles proviennent des bulletins scolaires et de questionnaires remplis par les élèves.
+
+Deux fichiers correspondent à deux matières :
+
+| Fichier | Matière | Élèves | Répartition GP / MS | Élèves en échec (G3 < 10) |
+|---|---|---|---|---|
+| `student-mat.csv` | Mathématiques | 395 | 349 / 46 | 33 % |
+| `student-por.csv` | Portugais | 649 | 423 / 226 | 15 % |
+
+Chaque élève est décrit par 33 variables :
+- **profil démographique et familial** : âge, sexe, milieu urbain ou rural, taille de la famille, niveau d'études et métier des parents ;
+- **scolarité** : nombre d'échecs passés, temps d'étude hebdomadaire, soutien scolaire et familial, cours particuliers, absences, souhait de faire des études supérieures ;
+- **mode de vie** : temps libre, sorties, consommation d'alcool en semaine et le week-end, état de santé, relation amoureuse ;
+- **notes** sur 20 : G1 (1er trimestre), G2 (2e trimestre) et G3 (note finale, la cible).
+
+Une partie des élèves suit les deux matières. Le script `student-merge.R` fourni avec les données les apparie sur 13 attributs communs et trouve 382 élèves ; notre notebook montre que cet appariement est en partie ambigu et n'en retient que 358 (section 7.3).
 
 | Fichier | Contenu |
 |---|---|
 | `data/student-mat.csv` | Élèves du cours de mathématiques |
 | `data/student-por.csv` | Élèves du cours de portugais |
-| `data/student.txt` | Description des 33 variables |
+| `data/student.txt` | Description détaillée des 33 variables |
 | `data/student-merge.R` | Script d'appariement des élèves présents dans les deux fichiers |
+
+Référence : P. Cortez et A. Silva, « Using Data Mining to Predict Secondary School Student Performance », *Proceedings of 5th FUture BUsiness TEChnology Conference (FUBUTEC 2008)*, Porto, 2008, p. 5-12.
 
 ## Démarche
 
@@ -48,6 +63,6 @@ jupyter notebook projet_ml_reussite_scolaire.ipynb
 
 Le notebook est déjà exécuté : les graphiques et résultats sont visibles directement sur GitHub. Une exécution complète prend quelques minutes. La graine aléatoire est fixée (42) pour la reproductibilité.
 
-## Auteure
+## Auteures
 
-Céline Buob-Gandil, ISAE-SUPAERO
+Céline Buob-Gandil, Lila Kacedan
