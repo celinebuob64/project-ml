@@ -61,8 +61,6 @@ pip install -r requirements.txt
 jupyter notebook projet_ml_reussite_scolaire.ipynb
 ```
 
-Le notebook est déjà exécuté : les graphiques et résultats sont visibles directement sur GitHub. Une exécution complète prend quelques minutes. La graine aléatoire est fixée (42) pour la reproductibilité.
-
-## Auteures
+## Autrices
 
 Céline Buob-Gandil, Lila Kacedan
